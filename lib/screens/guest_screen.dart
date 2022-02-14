@@ -4,8 +4,13 @@ class GuestScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('BRUH'),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Text('Logged in as a Guest'),
+        ),
+      ),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:library_69_client/custom widgets/custom_card.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
@@ -41,12 +42,10 @@ class WelcomeScreen extends StatelessWidget {
                 child: Card(
                   child: InkWell(
                     child: Center(
-                        child: Text(
-                      'GUEST',
-                      style: TextStyle(color: Colors.white),
-                    )),
+                        child: Text('ADMIN',
+                            style: TextStyle(color: Colors.white))),
                     onTap: () {
-                      Navigator.pushNamed(context, "/guest");
+                      Navigator.pushNamed(context, "/admin");
                     },
                   ),
                   shape: RoundedRectangleBorder(
