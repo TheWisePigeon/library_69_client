@@ -14,8 +14,8 @@ class Category{
     for(var category in data){
       result.add(
           CategoryTile(
-              category["id"].toString(),
-              category["label"]
+            category["id"].toString(),
+            category["label"],
           )
       );
     }
@@ -26,14 +26,13 @@ class Category{
     List<Widget> result = [];
     http.Response response = await http.get(Uri.parse(kBaseUrl+'categories/$id'));
     var data = jsonDecode(response.body.toString())["category"];
-    for(var category in data){
       result.add(
           CategoryTile(
-              category["id"],
-              category["label"]
+              data["label"],
+              data["id"].toString(),
+
           )
       );
-    }
     return result;
   }
 
