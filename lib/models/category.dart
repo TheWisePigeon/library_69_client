@@ -1,24 +1,17 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-import 'package:library_69_client/constants.dart';
+import 'package:flutter/material.dart';
+import 'package:getwidget/getwidget.dart';
+class CategoryTile extends StatelessWidget {
 
-class Category{
+  late String id;
+  late String label;
 
-  static Future getCategories(String url) async{
-    http.Response response = await http.get(Uri.parse(kBaseUrl+'categories'));
-    var data = jsonDecode(response.body.toString());
-    return data;
-  }
-
-  static Future getCategory(String id) async{
-    http.Response response = await http.get(Uri.parse(kBaseUrl+'categories/$id'));
-    var data = jsonDecode(response.body.toString());
-    return data;
-  }
-
-  static Future getBooksOfCategory(String id) async{
-    http.Response response = await http.get(Uri.parse(kBaseUrl+'categories/$id/books'));
-    var data = jsonDecode(response.body.toString());
-    return data;
+  CategoryTile(this.id, this.label);
+  @override
+  Widget build(BuildContext context) {
+    return GFListTile(
+      titleText:id,
+      subTitleText:label,
+      icon: Icon(Icons.category),
+    );
   }
 }
