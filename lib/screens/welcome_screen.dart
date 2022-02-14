@@ -13,12 +13,12 @@ class WelcomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children:  [
+            children: [
               Center(
                 child: Hero(
                   tag: "69",
                   child: Text(
-                    '69Lib Client',
+                    '69Lib',
                     style: TextStyle(
                         fontSize: 80.0,
                         color: Colors.blue,
@@ -26,27 +26,50 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              Center(
+                child: Text(
+                  'The mobile client',
+                  style: TextStyle(fontSize: 20, color: Colors.blueAccent),
+                ),
+              ),
               SizedBox(
                 height: 48.0,
               ),
-              Card(
-                child: InkWell(
-                  child: Center(child: Text('GUEST')),
-                  onTap: (){},
+              Container(
+                height: 35,
+                width: 55,
+                child: Card(
+                  child: InkWell(
+                    child: Center(
+                        child: Text(
+                      'GUEST',
+                      style: TextStyle(color: Colors.white),
+                    )),
+                    onTap: () {
+                      print("bruh");
+                    },
+                  ),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(16.0))),
+                  color: Colors.teal,
+                  elevation: 5.0,
                 ),
-                color: Colors.teal,
-                elevation: 5.0,
               ),
-              Card(
-                child: InkWell(
-                  child: Center(child: Text('ADMIN')),
-                  onTap: (){},
+              Container(
+                height: 35,
+                width: 55,
+                child: Card(
+                  child: InkWell(
+                    child: Center(
+                        child: Text('ADMIN',
+                            style: TextStyle(color: Colors.white))),
+                    onTap: () {},
+                  ),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(16.0))),
+                  color: Colors.teal,
+                  elevation: 5.0,
                 ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(16.0))
-                ),
-                color: Colors.teal,
-                elevation: 5.0,
               )
             ],
           ),
