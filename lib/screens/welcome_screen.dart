@@ -46,7 +46,7 @@ class WelcomeScreen extends StatelessWidget {
                       style: TextStyle(color: Colors.white),
                     )),
                     onTap: () {
-                      print("bruh");
+                      Navigator.pushNamed(context, "/guest");
                     },
                   ),
                   shape: RoundedRectangleBorder(
@@ -63,7 +63,9 @@ class WelcomeScreen extends StatelessWidget {
                     child: Center(
                         child: Text('ADMIN',
                             style: TextStyle(color: Colors.white))),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, "/admin");
+                    },
                   ),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(16.0))),
