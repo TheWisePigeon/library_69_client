@@ -6,8 +6,9 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.grey,
         appBar: AppBar(
-          title: const Text('69Lib Client'),
+          title: const Text('Made with ♥ by TheWisePigeon'),
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 50.0),
@@ -16,36 +17,33 @@ class WelcomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Center(
-                child: Hero(
-                  tag: "69",
-                  child: Text(
-                    '69Lib',
-                    style: TextStyle(
-                        fontSize: 80.0,
-                        color: Colors.blue,
-                        fontStyle: FontStyle.italic),
-                  ),
+                child: Text(
+                  '69Lib',
+                  style: TextStyle(
+                      fontSize: 80.0,
+                      color: Colors.white,
+                      fontStyle: FontStyle.italic),
                 ),
               ),
               Center(
                 child: Text(
                   'The mobile client',
-                  style: TextStyle(fontSize: 20, color: Colors.blueAccent),
+                  style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
               ),
               SizedBox(
                 height: 48.0,
               ),
               Container(
-                height: 35,
+                height: 45,
                 width: 55,
                 child: Card(
                   child: InkWell(
                     child: Center(
-                        child: Text('ADMIN',
+                        child: Text('GUEST',
                             style: TextStyle(color: Colors.white))),
                     onTap: () {
-                      Navigator.pushNamed(context, "/admin");
+                      Navigator.pushNamed(context, "/guest");
                     },
                   ),
                   shape: RoundedRectangleBorder(
@@ -55,7 +53,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                height: 35,
+                height: 45,
                 width: 55,
                 child: Card(
                   child: InkWell(
