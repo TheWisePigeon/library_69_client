@@ -117,7 +117,13 @@ class _AdminScreenState extends State<AdminScreen> {
                     width: 50,
                     child: ElevatedButton(
                       child: Icon(Icons.edit),
-                      onPressed: () async {},
+                      onPressed: () async {
+                        var response = await Category.getCategoryToUpdate(categoryId);
+                        print(response);
+                        setState(() {
+                          result = response;
+                        });
+                      },
                     ),
                   ),
                 ],
