@@ -51,8 +51,11 @@ class Book{
       )
     );
     result.add(
-        Text(
-            'Item deleted'
+        Padding(
+          padding: const EdgeInsets.only(left: 18.0),
+          child: Text(
+              'Item deleted'
+          ),
         )
     );
     return result;
