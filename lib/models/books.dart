@@ -38,4 +38,23 @@ class Book{
 
     return result;
   }
+
+  static Future deleteBook(String id) async{
+    List<Widget> result = [];
+    http.Response response = await http.delete(Uri.parse(kBaseUrl+'books/$id'));
+    var data = jsonDecode(response.body.toString())["deleted book"];
+    result.add(
+      BookTile(
+        data["title"],
+        data["author"],
+        data["isbn"]
+      )
+    );
+    result.add(
+        Text(
+            'Item deleted'
+        )
+    );
+    return result;
+  }
 }

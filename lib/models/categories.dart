@@ -51,4 +51,20 @@ class Category{
     }
     return result;
   }
+
+  static Future deleteCategory(String id) async{
+    List<Widget> result = [];
+    http.Response response = await http.delete(Uri.parse(kBaseUrl+'categories/$id'));
+    var data = jsonDecode(response.body.toString())["deleted book"];
+    result.add(
+      CategoryTile(
+        data["label"],
+        data["id"].toString()
+      )
+    );
+    result.add(
+        Text('Item deleted')
+    );
+    return result;
+  }
 }
